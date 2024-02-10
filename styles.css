@@ -125,6 +125,11 @@ table {
   border-spacing: 0;
 }
 
+:root {
+    --sidebar-bg-color: #082f49;
+    --main-bg-color: #f0f9ff;
+}
+
 html {
   box-sizing: border-box;
   min-width: min-content;
@@ -170,7 +175,47 @@ img[alt^="User"] {
     border-radius: 50%;
 }
 
+img[alt$="icon"] {
+    width: 25px;
+}
 
+img[alt="Dashboard icon"] {
+    width: 50px;
+}
+
+.sidebar1 img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(302deg) brightness(104%) contrast(102%);
+}
+
+.sidebar1 {
+    padding: 10px;
+    background-color: var(--sidebar-bg-color);
+}
+
+.sidebar1 > h1,
+.sidebar1 li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar1 > h1 {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+.sidebar1 li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.search-bar,
+.main,
+.sidebar2 {
+    background-color: var(--main-bg-color);
+}
 
 * {
   outline: 1px solid red;
