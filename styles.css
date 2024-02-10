@@ -128,6 +128,7 @@ table {
 :root {
   --sidebar-bg-color: #082f49;
   --main-bg-color: #e2e8f0;
+  --universal-box-shadow: 2px 2px 6px 1px rgb(8, 47, 73, 0.5);
 }
 
 html {
@@ -151,24 +152,31 @@ body {
   grid-template-areas: "sidebar1 header header" "sidebar1 main sidebar2";
   grid-template-columns: 200px 1fr 200px;
   grid-template-rows: 150px 1fr;
+  background-color: var(--main-bg-color);
 }
 
 .header {
   grid-area: header;
   padding: 10px 50px 10px 30px;
+  background-color: #fff;
+  box-shadow: var(--universal-box-shadow);
 }
 
 .sidebar1 {
   grid-area: sidebar1;
+  padding: 10px;
+  background-color: var(--sidebar-bg-color);
 }
 
 .main {
   grid-area: main;
   min-width: 300px;
+  padding: 30px 15px;
 }
 
 .sidebar2 {
   grid-area: sidebar2;
+  margin-top: 30px;
 }
 
 img[alt^="User"] {
@@ -189,11 +197,6 @@ img[alt="Dashboard icon"] {
     brightness(104%) contrast(102%);
 }
 
-.sidebar1 {
-  padding: 10px;
-  background-color: var(--sidebar-bg-color);
-}
-
 .sidebar1 > h1,
 .sidebar1 li {
   display: flex;
@@ -211,12 +214,6 @@ img[alt="Dashboard icon"] {
 .sidebar1 li {
   padding-left: 10px;
   margin-bottom: 10px;
-}
-
-.search-bar,
-.main,
-.sidebar2 {
-  background-color: var(--main-bg-color);
 }
 
 .header1,
@@ -241,10 +238,12 @@ img[alt="Dashboard icon"] {
 }
 
 .search-bar {
+  background-color: var(--main-bg-color);
   border: none;
   border-radius: 5em;
   flex: 1;
   padding: 7px 15px;
+  max-width: 350px;
 }
 
 button {
@@ -270,6 +269,48 @@ button {
 
 .header1 > p {
   font-weight: bold;
+}
+
+.main > h1,
+.sidebar2 h1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    flex: 1 1 auto;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px 20px 20px;
+    border-left: 6px solid var(--sidebar-bg-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--universal-box-shadow);
+}
+
+.card > h2 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.card > p {
+    flex: 1 0 auto;
+    font-size: 0.75rem;
+    color: #636363;
+    margin-bottom: 4px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
 }
 
 * {
