@@ -150,7 +150,7 @@ body {
   font-family: Roboto, system-ui, sans-serif;
   display: grid;
   grid-template-areas: "sidebar1 header header" "sidebar1 main sidebar2";
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 250px 1fr 250px;
   grid-template-rows: 150px 1fr;
   background-color: var(--main-bg-color);
 }
@@ -171,12 +171,13 @@ body {
 .main {
   grid-area: main;
   min-width: 300px;
-  padding: 30px 15px;
+  padding: 30px 15px 100px 15px;
 }
 
 .sidebar2 {
   grid-area: sidebar2;
   margin-top: 30px;
+  padding: 0 20px 100px 15px;
 }
 
 img[alt^="User"] {
@@ -186,6 +187,10 @@ img[alt^="User"] {
 
 img[alt$="icon"] {
   width: 25px;
+}
+
+.actions img {
+    width: 20px;
 }
 
 img[alt="Dashboard icon"] {
@@ -285,13 +290,16 @@ button {
 
 .card {
     flex: 1 1 auto;
-    width: 200px;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 30px 20px 20px;
     border-left: 6px solid var(--sidebar-bg-color);
     display: flex;
     flex-direction: column;
+    width: 200px;
+}
+
+.card, .announcements > ul, .trending > ul {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px 20px 20px;
     box-shadow: var(--universal-box-shadow);
 }
 
@@ -308,11 +316,41 @@ button {
     margin-bottom: 4px;
 }
 
+.announcements h2 {
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 4px;  
+}
+
+.announcements p {
+    font-size: 0.6rem;
+    margin-bottom: 10px;
+    color: #636363;
+    padding: 10px;
+    border-bottom: 1px solid #636363;
+}
+
+.announcements {
+    margin-bottom: 25px;
+}
+
 .actions {
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 }
 
-* {
-  outline: 1px solid red;
+.trending li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.trending li p {
+    font-size: 0.75rem;
+}
+
+.trending li p + p {
+    color: #636363;
 }
